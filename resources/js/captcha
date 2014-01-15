@@ -1,0 +1,32 @@
+INIT.JS
+	/* Registration captcha */
+	/*$('#captcha').attr('placeholder', ws.getCaptcha(5));*/
+
+WEBSTORAGE.JS	
+		this.register = function() {
+		/*if($('#captcha').attr('placeholder') !== $('#reg_captcha').val()) {
+			$('#register').html('<p class="alertimg">'+str['registration']['captcha']+'</p>');
+			$('#register').css('height', '40px');
+			window.setTimeout("self.location.reload();", 1000);
+			return false;
+		}*/
+		[...]
+	}
+
+	this.getCaptcha = function(len) {
+		var words = 'abcdefghilmnopqrstuvz'.split('');
+		var rand = function(limit) {
+			return Math.floor(Math.random()*limit);
+		}
+		var captcha = '';
+		var randWord = '';
+		for(var i=0; i<len; ++i) {
+			randWord = words[rand(words.length)],
+			captcha += (i==0) ? randWord.toUpperCase() : randWord;
+		}
+		return captcha;
+	}
+	
+HTML
+
+	<input type="text" id="reg_captcha" placeholder="captcha" value="" /><input type="text" id="captcha" placeholder="caricamento..." readonly="readonly" value="" /><br />

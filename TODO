@@ -1,0 +1,6 @@
+--I file di 0kb non caricano;
+--Se carico un file di grandi dimensioni il caricamento non è visibile.
+
+
+--Per inviare i dati usa il POST, appendendoci l'evento .error;
+--API in scrittura con i token privati associati ad ogni utente.
